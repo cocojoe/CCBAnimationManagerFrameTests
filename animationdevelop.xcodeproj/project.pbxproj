@@ -167,11 +167,11 @@
 		5B8BD7DF18CE7417002FC624 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD7DE18CE7417002FC624 /* vec3.c */; };
 		5B8BD7E118CE7417002FC624 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD7E018CE7417002FC624 /* vec4.c */; };
 		5B8BD7E318CE7417002FC624 /* LICENSE_Kazmath.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B8BD7E218CE7417002FC624 /* LICENSE_Kazmath.txt */; };
-		5B8BD7E718CE7417002FC624 /* CCAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD7E618CE7417002FC624 /* CCAnimationManager.m */; };
-		5B8BD7EA18CE7417002FC624 /* CCAnimationKeyframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD7E918CE7417002FC624 /* CCAnimationKeyframe.m */; };
+		5B8BD7E718CE7417002FC624 /* CCBAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD7E618CE7417002FC624 /* CCBAnimationManager.m */; };
+		5B8BD7EA18CE7417002FC624 /* CCBKeyframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD7E918CE7417002FC624 /* CCBKeyframe.m */; };
 		5B8BD7ED18CE7417002FC624 /* CCBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD7EC18CE7417002FC624 /* CCBReader.m */; };
-		5B8BD7F018CE7417002FC624 /* CCAnimationSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD7EF18CE7417002FC624 /* CCAnimationSequence.m */; };
-		5B8BD7F318CE7417002FC624 /* CCAnimationSequenceProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD7F218CE7417002FC624 /* CCAnimationSequenceProperty.m */; };
+		5B8BD7F018CE7417002FC624 /* CCBSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD7EF18CE7417002FC624 /* CCBSequence.m */; };
+		5B8BD7F318CE7417002FC624 /* CCBSequenceProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD7F218CE7417002FC624 /* CCBSequenceProperty.m */; };
 		5B8BD7F618CE7417002FC624 /* CCBLocalizationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD7F518CE7417002FC624 /* CCBLocalizationManager.m */; };
 		5B8BD7FA18CE7417002FC624 /* LICENSE_CCBReader.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B8BD7F918CE7417002FC624 /* LICENSE_CCBReader.txt */; };
 		5B8BD81A18CE7417002FC624 /* chipmunk.c in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD81918CE7417002FC624 /* chipmunk.c */; };
@@ -210,8 +210,9 @@
 		5B8BD86818CE7417002FC624 /* LICENSE_Chipmunk.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B8BD86718CE7417002FC624 /* LICENSE_Chipmunk.txt */; };
 		5B8BD86C18CE7417002FC624 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD86B18CE7417002FC624 /* main.m */; };
 		5B8BD87018CE7417002FC624 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD86F18CE7417002FC624 /* AppDelegate.m */; };
-		5B8BD87318CE7417002FC624 /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD87218CE7417002FC624 /* HelloWorldScene.m */; };
 		5B8BD87618CE7418002FC624 /* IntroScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8BD87518CE7418002FC624 /* IntroScene.m */; };
+		5B8BD88318CE78FD002FC624 /* grossini_blue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B8BD88118CE78FD002FC624 /* grossini_blue.plist */; };
+		5B8BD88418CE78FD002FC624 /* grossini_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B8BD88218CE78FD002FC624 /* grossini_blue.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -563,16 +564,16 @@
 		5B8BD7DE18CE7417002FC624 /* vec3.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = vec3.c; path = Libraries/kazmath/src/vec3.c; sourceTree = "<group>"; };
 		5B8BD7E018CE7417002FC624 /* vec4.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = vec4.c; path = Libraries/kazmath/src/vec4.c; sourceTree = "<group>"; };
 		5B8BD7E218CE7417002FC624 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Kazmath.txt; path = Libraries/LICENSE_Kazmath.txt; sourceTree = "<group>"; };
-		5B8BD7E518CE7417002FC624 /* CCAnimationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCAnimationManager.h; path = Libraries/CCBReader/CCAnimationManager.h; sourceTree = "<group>"; };
-		5B8BD7E618CE7417002FC624 /* CCAnimationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCAnimationManager.m; path = Libraries/CCBReader/CCAnimationManager.m; sourceTree = "<group>"; };
-		5B8BD7E818CE7417002FC624 /* CCAnimationKeyframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCAnimationKeyframe.h; path = Libraries/CCBReader/CCAnimationKeyframe.h; sourceTree = "<group>"; };
-		5B8BD7E918CE7417002FC624 /* CCAnimationKeyframe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCAnimationKeyframe.m; path = Libraries/CCBReader/CCAnimationKeyframe.m; sourceTree = "<group>"; };
+		5B8BD7E518CE7417002FC624 /* CCBAnimationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCBAnimationManager.h; path = Libraries/CCBReader/CCBAnimationManager.h; sourceTree = "<group>"; };
+		5B8BD7E618CE7417002FC624 /* CCBAnimationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCBAnimationManager.m; path = Libraries/CCBReader/CCBAnimationManager.m; sourceTree = "<group>"; };
+		5B8BD7E818CE7417002FC624 /* CCBKeyframe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCBKeyframe.h; path = Libraries/CCBReader/CCBKeyframe.h; sourceTree = "<group>"; };
+		5B8BD7E918CE7417002FC624 /* CCBKeyframe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCBKeyframe.m; path = Libraries/CCBReader/CCBKeyframe.m; sourceTree = "<group>"; };
 		5B8BD7EB18CE7417002FC624 /* CCBReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCBReader.h; path = Libraries/CCBReader/CCBReader.h; sourceTree = "<group>"; };
 		5B8BD7EC18CE7417002FC624 /* CCBReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCBReader.m; path = Libraries/CCBReader/CCBReader.m; sourceTree = "<group>"; };
-		5B8BD7EE18CE7417002FC624 /* CCAnimationSequence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCAnimationSequence.h; path = Libraries/CCBReader/CCAnimationSequence.h; sourceTree = "<group>"; };
-		5B8BD7EF18CE7417002FC624 /* CCAnimationSequence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCAnimationSequence.m; path = Libraries/CCBReader/CCAnimationSequence.m; sourceTree = "<group>"; };
-		5B8BD7F118CE7417002FC624 /* CCAnimationSequenceProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCAnimationSequenceProperty.h; path = Libraries/CCBReader/CCAnimationSequenceProperty.h; sourceTree = "<group>"; };
-		5B8BD7F218CE7417002FC624 /* CCAnimationSequenceProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCAnimationSequenceProperty.m; path = Libraries/CCBReader/CCAnimationSequenceProperty.m; sourceTree = "<group>"; };
+		5B8BD7EE18CE7417002FC624 /* CCBSequence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCBSequence.h; path = Libraries/CCBReader/CCBSequence.h; sourceTree = "<group>"; };
+		5B8BD7EF18CE7417002FC624 /* CCBSequence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCBSequence.m; path = Libraries/CCBReader/CCBSequence.m; sourceTree = "<group>"; };
+		5B8BD7F118CE7417002FC624 /* CCBSequenceProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCBSequenceProperty.h; path = Libraries/CCBReader/CCBSequenceProperty.h; sourceTree = "<group>"; };
+		5B8BD7F218CE7417002FC624 /* CCBSequenceProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCBSequenceProperty.m; path = Libraries/CCBReader/CCBSequenceProperty.m; sourceTree = "<group>"; };
 		5B8BD7F418CE7417002FC624 /* CCBLocalizationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCBLocalizationManager.h; path = Libraries/CCBReader/CCBLocalizationManager.h; sourceTree = "<group>"; };
 		5B8BD7F518CE7417002FC624 /* CCBLocalizationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCBLocalizationManager.m; path = Libraries/CCBReader/CCBLocalizationManager.m; sourceTree = "<group>"; };
 		5B8BD7F718CE7417002FC624 /* CCBuilderReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCBuilderReader.h; path = Libraries/CCBReader/CCBuilderReader.h; sourceTree = "<group>"; };
@@ -649,10 +650,10 @@
 		5B8BD86B18CE7417002FC624 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
 		5B8BD86E18CE7417002FC624 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		5B8BD86F18CE7417002FC624 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
-		5B8BD87118CE7417002FC624 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		5B8BD87218CE7417002FC624 /* HelloWorldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HelloWorldScene.m; path = Classes/HelloWorldScene.m; sourceTree = "<group>"; };
 		5B8BD87418CE7417002FC624 /* IntroScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IntroScene.h; path = Classes/IntroScene.h; sourceTree = "<group>"; };
 		5B8BD87518CE7418002FC624 /* IntroScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = IntroScene.m; path = Classes/IntroScene.m; sourceTree = "<group>"; };
+		5B8BD88118CE78FD002FC624 /* grossini_blue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = grossini_blue.plist; path = Resources/grossini_blue.plist; sourceTree = "<group>"; };
+		5B8BD88218CE78FD002FC624 /* grossini_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grossini_blue.png; path = Resources/grossini_blue.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -724,6 +725,8 @@
 		5B8BD5DF18CE7415002FC624 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5B8BD88118CE78FD002FC624 /* grossini_blue.plist */,
+				5B8BD88218CE78FD002FC624 /* grossini_blue.png */,
 				5B8BD5E018CE7415002FC624 /* Default.png */,
 				5B8BD5E218CE7415002FC624 /* Default@2x.png */,
 				5B8BD5E418CE7415002FC624 /* Default-568h@2x.png */,
@@ -1373,16 +1376,16 @@
 		5B8BD7E418CE7417002FC624 /* CCBReader */ = {
 			isa = PBXGroup;
 			children = (
-				5B8BD7E518CE7417002FC624 /* CCAnimationManager.h */,
-				5B8BD7E618CE7417002FC624 /* CCAnimationManager.m */,
-				5B8BD7E818CE7417002FC624 /* CCAnimationKeyframe.h */,
-				5B8BD7E918CE7417002FC624 /* CCAnimationKeyframe.m */,
+				5B8BD7E518CE7417002FC624 /* CCBAnimationManager.h */,
+				5B8BD7E618CE7417002FC624 /* CCBAnimationManager.m */,
+				5B8BD7E818CE7417002FC624 /* CCBKeyframe.h */,
+				5B8BD7E918CE7417002FC624 /* CCBKeyframe.m */,
 				5B8BD7EB18CE7417002FC624 /* CCBReader.h */,
 				5B8BD7EC18CE7417002FC624 /* CCBReader.m */,
-				5B8BD7EE18CE7417002FC624 /* CCAnimationSequence.h */,
-				5B8BD7EF18CE7417002FC624 /* CCAnimationSequence.m */,
-				5B8BD7F118CE7417002FC624 /* CCAnimationSequenceProperty.h */,
-				5B8BD7F218CE7417002FC624 /* CCAnimationSequenceProperty.m */,
+				5B8BD7EE18CE7417002FC624 /* CCBSequence.h */,
+				5B8BD7EF18CE7417002FC624 /* CCBSequence.m */,
+				5B8BD7F118CE7417002FC624 /* CCBSequenceProperty.h */,
+				5B8BD7F218CE7417002FC624 /* CCBSequenceProperty.m */,
 				5B8BD7F418CE7417002FC624 /* CCBLocalizationManager.h */,
 				5B8BD7F518CE7417002FC624 /* CCBLocalizationManager.m */,
 				5B8BD7F718CE7417002FC624 /* CCBuilderReader.h */,
@@ -1542,8 +1545,6 @@
 			children = (
 				5B8BD86E18CE7417002FC624 /* AppDelegate.h */,
 				5B8BD86F18CE7417002FC624 /* AppDelegate.m */,
-				5B8BD87118CE7417002FC624 /* HelloWorldScene.h */,
-				5B8BD87218CE7417002FC624 /* HelloWorldScene.m */,
 				5B8BD87418CE7417002FC624 /* IntroScene.h */,
 				5B8BD87518CE7418002FC624 /* IntroScene.m */,
 			);
@@ -1620,12 +1621,14 @@
 			files = (
 				5B8BD5E318CE7415002FC624 /* Default@2x.png in Resources */,
 				5B8BD5F618CE7415002FC624 /* Icon-120.png in Resources */,
+				5B8BD88318CE78FD002FC624 /* grossini_blue.plist in Resources */,
 				5B8BD7FA18CE7417002FC624 /* LICENSE_CCBReader.txt in Resources */,
 				5B8BD5EC18CE7415002FC624 /* Icon@2x.png in Resources */,
 				5B8BD5FE18CE7415002FC624 /* Icon-Small@2x.png in Resources */,
 				5B8BD5F018CE7415002FC624 /* Icon-72@2x.png in Resources */,
 				5B8BD5E118CE7415002FC624 /* Default.png in Resources */,
 				5B8BD5EA18CE7415002FC624 /* Icon.png in Resources */,
+				5B8BD88418CE78FD002FC624 /* grossini_blue.png in Resources */,
 				5B8BD5F818CE7415002FC624 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				5B8BD5E718CE7415002FC624 /* Default-Landscape~ipad.png in Resources */,
 				5B8BD5FC18CE7415002FC624 /* Icon-Small.png in Resources */,
@@ -1677,7 +1680,7 @@
 				5B8BD63818CE7416002FC624 /* ccDeprecated.m in Sources */,
 				5B8BD76718CE7417002FC624 /* ALContext.m in Sources */,
 				5B8BD64318CE7416002FC624 /* CCDrawNode.m in Sources */,
-				5B8BD7EA18CE7417002FC624 /* CCAnimationKeyframe.m in Sources */,
+				5B8BD7EA18CE7417002FC624 /* CCBKeyframe.m in Sources */,
 				5B8BD71418CE7416002FC624 /* CCFileUtils.m in Sources */,
 				5B8BD79718CE7417002FC624 /* OALTools.m in Sources */,
 				5B8BD64D18CE7416002FC624 /* ccGLStateCache.m in Sources */,
@@ -1747,7 +1750,6 @@
 				5B8BD7CD18CE7417002FC624 /* matrix.c in Sources */,
 				5B8BD6DF18CE7416002FC624 /* CCTiledMapLayer.m in Sources */,
 				5B8BD7D318CE7417002FC624 /* neon_matrix_impl.c in Sources */,
-				5B8BD87318CE7417002FC624 /* HelloWorldScene.m in Sources */,
 				5B8BD65818CE7416002FC624 /* CCLabelTTF.m in Sources */,
 				5B8BD70D18CE7416002FC624 /* NSEvent+CC.m in Sources */,
 				5B8BD76A18CE7417002FC624 /* ALDevice.m in Sources */,
@@ -1772,8 +1774,8 @@
 				5B8BD73118CE7416002FC624 /* TGAlib.m in Sources */,
 				5B8BD87018CE7417002FC624 /* AppDelegate.m in Sources */,
 				5B8BD6FD18CE7416002FC624 /* UITouch+CC.m in Sources */,
-				5B8BD7F318CE7417002FC624 /* CCAnimationSequenceProperty.m in Sources */,
-				5B8BD7E718CE7417002FC624 /* CCAnimationManager.m in Sources */,
+				5B8BD7F318CE7417002FC624 /* CCBSequenceProperty.m in Sources */,
+				5B8BD7E718CE7417002FC624 /* CCBAnimationManager.m in Sources */,
 				5B8BD7DB18CE7417002FC624 /* utility.c in Sources */,
 				5B8BD73A18CE7416002FC624 /* ZipUtils.m in Sources */,
 				5B8BD74B18CE7417002FC624 /* OALUtilityActions.m in Sources */,
@@ -1785,7 +1787,7 @@
 				5B8BD67C18CE7416002FC624 /* CCParticleSystem.m in Sources */,
 				5B8BD6A118CE7416002FC624 /* CCScene.m in Sources */,
 				5B8BD6CF18CE7416002FC624 /* CCTexture.m in Sources */,
-				5B8BD7F018CE7417002FC624 /* CCAnimationSequence.m in Sources */,
+				5B8BD7F018CE7417002FC624 /* CCBSequence.m in Sources */,
 				5B8BD76118CE7417002FC624 /* ALCaptureDevice.m in Sources */,
 				5B8BD69D18CE7416002FC624 /* CCResponderManager.m in Sources */,
 				5B8BD63518CE7416002FC624 /* CCConfiguration.m in Sources */,
@@ -1989,6 +1991,7 @@
 				5B8BD87B18CE7418002FC624 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B8BD87C18CE7418002FC624 /* Build configuration list for PBXNativeTarget "animationdevelop" */ = {
 			isa = XCConfigurationList;
@@ -1997,6 +2000,7 @@
 				5B8BD87E18CE7418002FC624 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

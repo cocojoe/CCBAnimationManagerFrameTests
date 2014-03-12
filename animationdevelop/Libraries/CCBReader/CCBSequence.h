@@ -25,12 +25,17 @@
 
 #import <Foundation/Foundation.h>
 
-#define CCBSequenceProperty     CCAnimationSequenceProperty
+@class CCBSequenceProperty;
 
-@interface CCAnimationSequenceProperty : NSObject
+@interface CCBSequence : NSObject
 
-@property (nonatomic,strong) NSString* name;
-@property (nonatomic,assign) int type;
-@property (nonatomic,readonly) NSMutableArray* keyframes;
+@property (nonatomic,assign) float duration;
+@property (nonatomic,copy)   NSString* name;
+@property (nonatomic,assign) int sequenceId;
+@property (nonatomic,assign) int chainedSequenceId;
+
+// Channels
+@property (nonatomic,strong) CCBSequenceProperty* callbackChannel;
+@property (nonatomic,strong) CCBSequenceProperty* soundChannel;
 
 @end

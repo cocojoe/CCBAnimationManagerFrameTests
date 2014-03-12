@@ -23,15 +23,25 @@
  * THE SOFTWARE.
  */
 
-#import "CCAnimationKeyframe.h"
+#import "CCBSequence.h"
 
-@implementation CCAnimationKeyframe
+@implementation CCBSequence
 
-- (NSString *) description {
+- (id)init
+{
+    self = [super init];
+    if (!self) return NULL;
     
-    NSString *description = [NSString localizedStringWithFormat:@"[CCBKeyframe] value: %@, time: %f, easingType: %d, easingOpt: %f", self.value, self.time,self.easingType,self.easingOpt];
+    // Defaults
+    _duration          = 0.0f;
+    _name              = @"";
+    _sequenceId        = -1;
+    _chainedSequenceId = 0;
     
-    return description;
+    _callbackChannel   = nil;
+    _soundChannel      = nil;
+
+    return self;
 }
 
 

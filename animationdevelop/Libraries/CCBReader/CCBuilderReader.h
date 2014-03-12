@@ -24,5 +24,5 @@
  */
 
 #import "CCBReader.h"
-#import "CCAnimationManager.h"
+#import "CCBAnimationManager.h"
 #import "CCBLocalizationManager.h"

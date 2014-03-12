@@ -9,7 +9,6 @@
 
 // Import the interfaces
 #import "IntroScene.h"
-#import "HelloWorldScene.h"
 
 // -----------------------------------------------------------------------
 #pragma mark - IntroScene
@@ -39,33 +38,59 @@
     [self addChild:background];
     
     // Hello world
-    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Chalkduster" fontSize:36.0f];
+    CCLabelTTF *label = [CCLabelTTF labelWithString:@"Dance" fontName:@"Chalkduster" fontSize:36.0f];
     label.positionType = CCPositionTypeNormalized;
     label.color = [CCColor redColor];
-    label.position = ccp(0.5f, 0.5f); // Middle of screen
+    label.position = ccp(0.5f, 0.85f); // Middle of screen
     [self addChild:label];
     
-    // Helloworld scene button
-    CCButton *helloWorldButton = [CCButton buttonWithTitle:@"[ Start ]" fontName:@"Verdana-Bold" fontSize:18.0f];
-    helloWorldButton.positionType = CCPositionTypeNormalized;
-    helloWorldButton.position = ccp(0.5f, 0.35f);
-    [helloWorldButton setTarget:self selector:@selector(onSpinningClicked:)];
-    [self addChild:helloWorldButton];
+    // Load Sprite Sheet
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"grossini_blue.plist" textureFilename:@"grossini_blue.png"];
+    
+    // Add Grossini Character
+    CCSprite* grossini = [CCSprite spriteWithImageNamed:@"grossini_blue_01.png"];
+    grossini.position  = ccp(240,160);
+    [self addChild:grossini z:10];
+    
+    // Setup Animation Manager
+    CCBAnimationManager* grossiniAnimation = [[CCBAnimationManager alloc] init];
+    
+    // Create Frame(s)
+    NSDictionary* frameDict0 = [NSDictionary dictionaryWithObjectsAndKeys:
+                               @"grossini_blue_01.png"        , @"value",
+                               [NSNumber numberWithFloat:0.0f], @"time",
+                               nil];
+    
+    NSDictionary* frameDict1 = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"grossini_blue_02.png"        , @"value",
+                                [NSNumber numberWithFloat:0.5f], @"time",
+                                nil];
+    
+    NSDictionary* frameDict2 = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"grossini_blue_03.png"        , @"value",
+                                [NSNumber numberWithFloat:1.0f], @"time",
+                                nil];
+    
+    NSDictionary* frameDict4 = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"grossini_blue_04.png"        , @"value",
+                                [NSNumber numberWithFloat:1.5f], @"time",
+                                nil];
+    
+    NSDictionary* frameDict5 = [NSDictionary dictionaryWithObjectsAndKeys:
+                                @"grossini_blue_01.png"        , @"value",
+                                [NSNumber numberWithFloat:2.0f], @"time",
+                                nil];
+    
+    NSArray* frameArray = [NSArray arrayWithObjects:frameDict0,frameDict1,frameDict2,frameDict4,frameDict5,nil];
 
-    // done
+    
+    // Add Animation Sequence
+    [grossiniAnimation addKeyFramesForSequenceNamed:@"dance" propertyType:CCBSequencePropertyTypeSpriteFrame frameArray:frameArray node:grossini];
+    
+    // Dance Grossini
+    [grossiniAnimation runAnimationsForSequenceNamed:@"dance"];
+
 	return self;
 }
 
-// -----------------------------------------------------------------------
-#pragma mark - Button Callbacks
-// -----------------------------------------------------------------------
-
-- (void)onSpinningClicked:(id)sender
-{
-    // start spinning scene with transition
-    [[CCDirector sharedDirector] replaceScene:[HelloWorldScene scene]
-                               withTransition:[CCTransition transitionPushWithDirection:CCTransitionDirectionLeft duration:1.0f]];
-}
-
-// -----------------------------------------------------------------------
 @end

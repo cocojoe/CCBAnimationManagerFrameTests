@@ -23,21 +23,37 @@
  * THE SOFTWARE.
  */
 
-#import <Foundation/Foundation.h>
+#import "CCBSequenceProperty.h"
 
-#define CCBSequence     CCAnimationSequence
+@implementation CCBSequenceProperty
 
-@class CCAnimationSequenceProperty;
+- (id) init
+{
+    self = [super init];
+    if (!self) return NULL;
+    
+    _name      = @"";
+    _type      = 0;
+    _keyframes = [[NSMutableArray alloc] init];
+    
+    return self;
+}
 
-@interface CCAnimationSequence : NSObject
+- (NSString *)description {
+        NSString *description = [NSString localizedStringWithFormat:@"[CCAnimationSequenceProperty] Name: %@, Type: %d, Keyframes: %@", self.name, self.type, self.keyframes];
+    
+    return description;
+}
 
-@property (nonatomic,assign) float duration;
-@property (nonatomic,copy)   NSString* name;
-@property (nonatomic,assign) int sequenceId;
-@property (nonatomic,assign) int chainedSequenceId;
-
-// Channels
-@property (nonatomic,strong) CCAnimationSequenceProperty* callbackChannel;
-@property (nonatomic,strong) CCAnimationSequenceProperty* soundChannel;
++ (NSString *)getPropertyNameFromTypeId:(CCBSequencePropertyType)propertyType {
+    
+    switch(propertyType) {
+        case CCBSequencePropertyTypeSpriteFrame:
+            return @"spriteFrame";
+            break;
+    }
+    
+    return nil;
+}
 
 @end

@@ -25,9 +25,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define CCBKeyframe     CCAnimationKeyframe
-
-@interface CCAnimationKeyframe : NSObject
+@interface CCBKeyframe : NSObject
 
 @property (nonatomic,strong) id value;
 @property (nonatomic,assign) float time;

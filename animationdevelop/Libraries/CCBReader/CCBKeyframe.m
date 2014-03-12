@@ -23,24 +23,30 @@
  * THE SOFTWARE.
  */
 
-#import "CCAnimationSequenceProperty.h"
+#import "CCBKeyframe.h"
 
-@implementation CCAnimationSequenceProperty
+@implementation CCBKeyframe
 
-- (id) init
+- (id)init
 {
     self = [super init];
     if (!self) return NULL;
     
-    _keyframes = [[NSMutableArray alloc] init];
+    // Defaults
+    _value              = nil;
+    _time               = 0.0f;
+    _easingType         = 0;
+    _easingOpt          = 0.0f;
     
     return self;
 }
 
 - (NSString *) description {
-        NSString *description = [NSString localizedStringWithFormat:@"[CCBSequenceProperty] Name: %@, Type: %d, Keyframes: %@", self.name, self.type, self.keyframes];
+    
+    NSString *description = [NSString localizedStringWithFormat:@"[CCAnimationKeyframe] value: %@, time: %f, easingType: %d, easingOpt: %f", self.value, self.time,self.easingType,self.easingOpt];
     
     return description;
 }
+
 
 @end

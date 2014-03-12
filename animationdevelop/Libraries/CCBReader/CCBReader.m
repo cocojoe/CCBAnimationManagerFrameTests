@@ -26,10 +26,10 @@
 #import "CCBReader.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
-#import "CCAnimationManager.h"
-#import "CCAnimationSequence.h"
-#import "CCAnimationSequenceProperty.h"
-#import "CCAnimationKeyframe.h"
+#import "CCBAnimationManager.h"
+#import "CCBSequence.h"
+#import "CCBSequenceProperty.h"
+#import "CCBKeyframe.h"
 #import "CCBLocalizationManager.h"
 #import "CCBReader_Private.h"
 
@@ -89,7 +89,7 @@
     if (!self) return NULL;
     
     // Setup action manager
-    self.animationManager = [[CCAnimationManager alloc] init];
+    self.animationManager = [[CCBAnimationManager alloc] init];
     
     // Setup set of loaded sprite sheets
     loadedSpriteSheets = [[NSMutableSet alloc] init];
@@ -727,9 +727,9 @@ static inline float readFloat(CCBReader *self)
     }
 }
 
-- (CCAnimationKeyframe*) readKeyframeOfType:(int)type
+- (CCBKeyframe*) readKeyframeOfType:(int)type
 {
-    CCAnimationKeyframe* keyframe = [[CCAnimationKeyframe alloc] init];
+    CCBKeyframe* keyframe = [[CCBKeyframe alloc] init];
     
     keyframe.time = readFloat(self);
     
@@ -837,7 +837,7 @@ static inline float readFloat(CCBReader *self)
         
         for (int j = 0; j < numProps; j++)
         {
-            CCAnimationSequenceProperty* seqProp = [[CCAnimationSequenceProperty alloc] init];
+            CCBSequenceProperty* seqProp = [[CCBSequenceProperty alloc] init];
             
             seqProp.name = [self readCachedString];
             seqProp.type = readIntWithSign(self, NO);
@@ -847,7 +847,7 @@ static inline float readFloat(CCBReader *self)
             
             for (int k = 0; k < numKeyframes; k++)
             {
-                CCAnimationKeyframe* keyframe = [self readKeyframeOfType:seqProp.type];
+                CCBKeyframe* keyframe = [self readKeyframeOfType:seqProp.type];
                 
                 [seqProp.keyframes addObject:keyframe];
             }
@@ -994,13 +994,13 @@ static inline float readFloat(CCBReader *self)
     return node;
 }
 
-- (BOOL) readCallbackKeyframesForSeq:(CCAnimationSequence*)seq
+- (BOOL) readCallbackKeyframesForSeq:(CCBSequence*)seq
 {
     int numKeyframes = readIntWithSign(self, NO);
     
     if (!numKeyframes) return YES;
     
-    CCAnimationSequenceProperty* channel = [[CCAnimationSequenceProperty alloc] init];
+    CCBSequenceProperty* channel = [[CCBSequenceProperty alloc] init];
     
     for (int i = 0; i < numKeyframes; i++)
     {
@@ -1013,7 +1013,7 @@ static inline float readFloat(CCBReader *self)
                                  [NSNumber numberWithInt:callbackType],
                                  nil];
         
-        CCAnimationKeyframe* keyframe = [[CCAnimationKeyframe alloc] init];
+        CCBKeyframe* keyframe = [[CCBKeyframe alloc] init];
         keyframe.time = time;
         keyframe.value = value;
         
@@ -1026,13 +1026,13 @@ static inline float readFloat(CCBReader *self)
     return YES;
 }
 
-- (BOOL) readSoundKeyframesForSeq:(CCAnimationSequence*)seq
+- (BOOL) readSoundKeyframesForSeq:(CCBSequence*)seq
 {
     int numKeyframes = readIntWithSign(self, NO);
     
     if (!numKeyframes) return YES;
     
-    CCAnimationSequenceProperty* channel = [[CCAnimationSequenceProperty alloc] init];
+    CCBSequenceProperty* channel = [[CCBSequenceProperty alloc] init];
     
     for (int i = 0; i < numKeyframes; i++)
     {
@@ -1048,7 +1048,7 @@ static inline float readFloat(CCBReader *self)
                                  [NSNumber numberWithFloat:pan],
                                  [NSNumber numberWithFloat:gain],
                                  nil];
-        CCAnimationKeyframe* keyframe = [[CCAnimationKeyframe alloc] init];
+        CCBKeyframe* keyframe = [[CCBKeyframe alloc] init];
         keyframe.time = time;
         keyframe.value = value;
         
@@ -1069,7 +1069,7 @@ static inline float readFloat(CCBReader *self)
     
     for (int i = 0; i < numSeqs; i++)
     {
-        CCAnimationSequence* seq = [[CCAnimationSequence alloc] init];
+        CCBSequence* seq = [[CCBSequence alloc] init];
         seq.duration = readFloat(self);
         seq.name = [self readCachedString];
         seq.sequenceId = readIntWithSign(self, NO);
@@ -1190,7 +1190,7 @@ static inline float readFloat(CCBReader *self)
     {
         CCNode* node = [pointerValue pointerValue];
         
-        CCAnimationManager* manager = [animationManagers objectForKey:pointerValue];
+        CCBAnimationManager* manager = [animationManagers objectForKey:pointerValue];
         node.userObject = manager;
     }
     

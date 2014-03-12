@@ -26,7 +26,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@class CCAnimationManager;
+@class CCBAnimationManager;
 
 /**
  The CCBReader loads node graphs created by SpriteBuilder (or other editors using the same format). If you are using SpriteBuilder it's strongly recommended that you set up the CCFileUtils using the configureCCFileUtils method or use the Xcode project file created by SpriteBuilder.
@@ -51,7 +51,7 @@
     
     id owner;
     
-    CCAnimationManager* animationManager;
+    CCBAnimationManager* animationManager;
     NSMutableDictionary* actionManagers;
     NSMutableSet* animatedProps;
 }
@@ -154,7 +154,7 @@
 /**
  *  Once a ccb-file has been loaded, the animationManager property will be set to contain the top level CCBAnimationManager
  */
-@property (nonatomic,strong) CCAnimationManager* animationManager;
+@property (nonatomic,strong) CCBAnimationManager* animationManager;
 
 @end
 
