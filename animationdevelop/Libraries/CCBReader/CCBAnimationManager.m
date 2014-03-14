@@ -154,7 +154,7 @@ static NSInteger ccbAnimationManagerID = 0;
     
     if ([name isEqualToString:@"rotation"])
     {
-        return [CCActionRotateBy actionWithDuration:duration angle:[kf1.value floatValue]];
+        return [CCActionRotateTo actionWithDuration:duration angle:[kf1.value floatValue] direct:YES];
     }
     else if ([name isEqualToString:@"rotationalSkewX"])
     {
@@ -571,7 +571,7 @@ static NSInteger ccbAnimationManagerID = 0;
     [self runAnimationsForSequenceNamed:name tweenDuration:0];
 }
 
-- (void) addSequenceCallBacks:(int)seqId tweenDuration:(int)tweenDuration startTime:(float)time {
+- (void) addSequenceCallBacks:(int)seqId tweenDuration:(float)tweenDuration startTime:(float)time {
     
     // End of Sequence Callback
     CCBSequence* seq = [self sequenceFromSequenceId:seqId];
@@ -818,7 +818,7 @@ static NSInteger ccbAnimationManagerID = 0;
     [_currentActions removeAllObjects];
 }
 
-#pragma mark Sequence Builder
+#pragma mark Simple Sequence Builder
 
 - (void)addKeyFramesForSequenceNamed:(NSString*)name propertyType:(CCBSequencePropertyType)propertyType frameArray:(NSArray*)frameArray node:(CCNode *)node {
     

@@ -488,15 +488,28 @@
 #pragma mark - CCRotateTo
 
 @implementation CCActionRotateTo
+
 +(id) actionWithDuration: (CCTime) t angle:(float) a
 {
-	return [[self alloc] initWithDuration:t angle:a ];
+	return [[self alloc] initWithDuration:t angle:a direct:NO];
+}
+
++(id) actionWithDuration: (CCTime) t angle:(float) a direct:(bool) direct
+{
+	return [[self alloc] initWithDuration:t angle:a direct:direct];
 }
 
 -(id) initWithDuration: (CCTime) t angle:(float) a
 {
-	if( (self=[super initWithDuration: t]) )
+	return [self initWithDuration:t angle:a direct:NO];
+}
+
+-(id) initWithDuration: (CCTime) t angle:(float) a direct:(bool) direct
+{
+	if( (self=[super initWithDuration: t]) ) {
 		_dstAngleX = _dstAngleY = a;
+        _direct    = direct;
+    }
 
 	return self;
 }
@@ -555,6 +568,14 @@
 -(void) startWithTarget:(CCNode *)aTarget
 {
 	[super startWithTarget:aTarget];
+    
+    // Direct Rotation (Support SpriteBuilder)
+    if(_direct) {
+        _startAngleX = _startAngleY = [_target rotation];
+        _diffAngleX = _dstAngleX - _startAngleX;
+        _diffAngleY = _dstAngleY - _startAngleY;
+        return;
+    }
 
     //Calculate X
 	_startAngleX = [_target rotationalSkewX];
@@ -570,7 +591,7 @@
 		_diffAngleX += 360;
   
 	
-  //Calculate Y: It's duplicated from calculating X since the rotation wrap should be the same
+   //Calculate Y: It's duplicated from calculating X since the rotation wrap should be the same
 	_startAngleY = [_target rotationalSkewY];
 	if (_startAngleY > 0)
 		_startAngleY = fmodf(_startAngleY, 360.0f);

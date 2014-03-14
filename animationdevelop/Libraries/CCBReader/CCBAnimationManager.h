@@ -103,7 +103,7 @@
 - (void)timeSeekForSequenceNamed:(NSString*)name time:(float)time;
 - (void)timeSeekForSequenceId:(int)seqId time:(float)time;
 
-#pragma mark Sequence Builder
+#pragma mark Simple Sequence Builder
 - (void)addKeyFramesForSequenceNamed:(NSString*)name propertyType:(CCBSequencePropertyType)propertyType frameArray:(NSArray*)frameArray node:(CCNode *)node;
 
 @end
