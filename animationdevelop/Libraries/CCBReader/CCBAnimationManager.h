@@ -106,4 +106,7 @@
 #pragma mark Simple Sequence Builder
 - (void)addKeyFramesForSequenceNamed:(NSString*)name propertyType:(CCBSequencePropertyType)propertyType frameArray:(NSArray*)frameArray node:(CCNode *)node;
 
+#pragma mark Cocos2D Animation Support
+- (void)animationWithSpriteFrames:animFrames delay:(float)delay name:(NSString*)name node:(CCNode*)node;
+
 @end

@@ -254,7 +254,7 @@ static NSInteger ccbAnimationManagerID = 0;
         
         // Animate @toto Add to current actions (needs tested)
         CCActionInterval* tweenAction = [self actionFromKeyframe0:NULL andKeyframe1:kf1 propertyName:name node:node];
-        tweenAction.tag = _animationManagerId;
+        tweenAction.tag = (int)_animationManagerId;
         [tweenAction startWithTarget:node];
         [_currentActions addObject:tweenAction];
     }
@@ -579,7 +579,7 @@ static NSInteger ccbAnimationManagerID = 0;
     CCActionSequence* completeAction = [CCActionSequence
                                         actionOne:[CCActionDelay actionWithDuration:seq.duration+tweenDuration-time]
                                         two:[CCActionCallFunc actionWithTarget:self selector:@selector(sequenceCompleted)]];
-    completeAction.tag = _animationManagerId;
+    completeAction.tag = (int)_animationManagerId;
     [completeAction startWithTarget:self.rootNode];
     [_currentActions addObject:completeAction];
     
@@ -588,7 +588,7 @@ static NSInteger ccbAnimationManagerID = 0;
         // Build sound actions for channel
         CCAction* action = [self actionForCallbackChannel:seq.callbackChannel];
         if (action) {
-            action.tag = _animationManagerId;
+            action.tag = (int)_animationManagerId;
             [action startWithTarget:self.rootNode];
             [_currentActions addObject:action];
         }
@@ -598,7 +598,7 @@ static NSInteger ccbAnimationManagerID = 0;
         // Build sound actions for channel
         CCAction* action = [self actionForSoundChannel:seq.soundChannel];
         if (action) {
-            action.tag = _animationManagerId;
+            action.tag = (int)_animationManagerId;
             [action startWithTarget:self.rootNode];
             [_currentActions addObject:action];
         }
@@ -834,10 +834,9 @@ static NSInteger ccbAnimationManagerID = 0;
     [sequence setChainedSequenceId:seqId];
     
     NSString *propertyName = [CCBSequenceProperty getPropertyNameFromTypeId:propertyType];
-    NSAssert(propertyName != nil, @"Property type %d couldn't be found",propertyType);
+    NSAssert(propertyName != nil, @"Property type %d couldn't be found",(int)propertyType);
     
     // Create Sequence Property
-    // Add To Sequence Property
     CCBSequenceProperty* sequenceProperty = [[CCBSequenceProperty alloc] init];
     [sequenceProperty setName:propertyName];
     [sequenceProperty setType:propertyType];
@@ -869,5 +868,34 @@ static NSInteger ccbAnimationManagerID = 0;
     
 }
 
+#pragma mark Cocos2D Animation Support
+
+- (void)animationWithSpriteFrames:animFrames delay:(float)delay name:(NSString*)name node:(CCNode*)node{
+    
+    float nextTime = 0.0f;
+    NSMutableArray *keyFrames = [[NSMutableArray alloc] init];
+    
+    for(NSString* frame in animFrames) {
+        // Create Frame(s)
+        NSDictionary* frameDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   frame, @"value",
+                                   [NSNumber numberWithFloat:nextTime], @"time",
+                                   nil];
+        
+        [keyFrames addObject:frameDict];
+        nextTime+=delay;
+    }
+    
+    // Return to first frame
+    NSDictionary* frameDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                               [animFrames firstObject], @"value",
+                               [NSNumber numberWithFloat:(nextTime+delay)], @"time",
+                               nil];
+    
+    [keyFrames addObject:frameDict];
+    
+    // Add Animation Sequence
+    [self addKeyFramesForSequenceNamed:name propertyType:CCBSequencePropertyTypeSpriteFrame frameArray:keyFrames node:node];
+}
 
 @end

@@ -55,37 +55,9 @@
     // Setup Animation Manager
     CCBAnimationManager* grossiniAnimation = [[CCBAnimationManager alloc] init];
     
-    // Create Frame(s)
-    NSDictionary* frameDict0 = [NSDictionary dictionaryWithObjectsAndKeys:
-                               @"grossini_blue_01.png"        , @"value",
-                               [NSNumber numberWithFloat:0.0f], @"time",
-                               nil];
-    
-    NSDictionary* frameDict1 = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"grossini_blue_02.png"        , @"value",
-                                [NSNumber numberWithFloat:0.5f], @"time",
-                                nil];
-    
-    NSDictionary* frameDict2 = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"grossini_blue_03.png"        , @"value",
-                                [NSNumber numberWithFloat:1.0f], @"time",
-                                nil];
-    
-    NSDictionary* frameDict4 = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"grossini_blue_04.png"        , @"value",
-                                [NSNumber numberWithFloat:1.5f], @"time",
-                                nil];
-    
-    NSDictionary* frameDict5 = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"grossini_blue_01.png"        , @"value",
-                                [NSNumber numberWithFloat:2.0f], @"time",
-                                nil];
-    
-    NSArray* frameArray = [NSArray arrayWithObjects:frameDict0,frameDict1,frameDict2,frameDict4,frameDict5,nil];
+    NSArray* animFrames = @[@"grossini_blue_01.png",@"grossini_blue_02.png",@"grossini_blue_03.png",@"grossini_blue_04.png"];
 
-    
-    // Add Animation Sequence
-    [grossiniAnimation addKeyFramesForSequenceNamed:@"dance" propertyType:CCBSequencePropertyTypeSpriteFrame frameArray:frameArray node:grossini];
+    [grossiniAnimation animationWithSpriteFrames:animFrames delay:0.15f name:@"dance" node:grossini];
     
     // Dance Grossini
     [grossiniAnimation runAnimationsForSequenceNamed:@"dance"];
