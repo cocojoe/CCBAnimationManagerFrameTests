@@ -37,7 +37,7 @@
     _time              = 0.0f;
     _name              = @"";
     _sequenceId        = -1;
-    _chainedSequenceId = 0;
+    _chainedSequenceId = -1;
     _loops             = 0;
     
     _callbackChannel   = nil;

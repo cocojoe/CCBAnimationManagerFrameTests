@@ -912,7 +912,7 @@ static NSInteger ccbAnimationManagerID = 0;
 
 #pragma mark Simple Sequence Builder
 
-- (void)addKeyFramesForSequenceNamed:(NSString*)name propertyType:(CCBSequencePropertyType)propertyType frameArray:(NSArray*)frameArray node:(CCNode *)node {
+- (void)addKeyFramesForSequenceNamed:(NSString*)name propertyType:(CCBSequencePropertyType)propertyType frameArray:(NSArray*)frameArray node:(CCNode *)node loop:(BOOL)loop {
     
     int seqId = (int)[self.sequences count];
     
@@ -922,8 +922,10 @@ static NSInteger ccbAnimationManagerID = 0;
     [sequence setSequenceId:seqId];
     [self.sequences addObject:sequence];
     
-    // Next Sequence (Loop)
-    [sequence setChainedSequenceId:seqId];
+    // Repeat Sequence (Loop)
+    if(loop) {
+        [sequence setChainedSequenceId:seqId];
+    }
     
     NSString *propertyName = [CCBSequenceProperty getPropertyNameFromTypeId:propertyType];
     NSAssert(propertyName != nil, @"Property type %d couldn't be found",(int)propertyType);
@@ -962,7 +964,7 @@ static NSInteger ccbAnimationManagerID = 0;
 
 #pragma mark Cocos2D Animation Support
 
-- (void)animationWithSpriteFrames:animFrames delay:(float)delay name:(NSString*)name node:(CCNode*)node{
+- (void)animationWithSpriteFrames:animFrames delay:(float)delay name:(NSString*)name node:(CCNode*)node loop:(BOOL)loop{
     
     float nextTime = 0.0f;
     NSMutableArray *keyFrames = [[NSMutableArray alloc] init];
@@ -987,7 +989,7 @@ static NSInteger ccbAnimationManagerID = 0;
     [keyFrames addObject:frameDict];
     
     // Add Animation Sequence
-    [self addKeyFramesForSequenceNamed:name propertyType:CCBSequencePropertyTypeSpriteFrame frameArray:keyFrames node:node];
+    [self addKeyFramesForSequenceNamed:name propertyType:CCBSequencePropertyTypeSpriteFrame frameArray:keyFrames node:node loop:loop];
 }
 
 @end

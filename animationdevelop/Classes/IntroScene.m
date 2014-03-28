@@ -57,7 +57,7 @@
     
     NSArray* animFrames = @[@"grossini_blue_01.png",@"grossini_blue_02.png",@"grossini_blue_03.png",@"grossini_blue_04.png"];
 
-    [grossiniAnimation animationWithSpriteFrames:animFrames delay:0.15f name:@"dance" node:grossini];
+    [grossiniAnimation animationWithSpriteFrames:animFrames delay:0.15f name:@"dance" node:grossini loop:YES];
     
     // Dance Grossini
     [grossiniAnimation runAnimationsForSequenceNamed:@"dance"];
