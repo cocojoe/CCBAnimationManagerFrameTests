@@ -46,11 +46,13 @@
     
     NSInteger _animationManagerId;
     CCBSequence* _runningSequence;
+    CCBSequence* _lastSequence;
     
     void (^block)(id sender);
     
     CCScheduler* _scheduler;
     NSMutableArray* _currentActions;
+    
 }
 
 // Sequence Array.
