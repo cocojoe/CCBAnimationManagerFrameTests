@@ -48,10 +48,10 @@
     // Load Sprite Sheet
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"grossini_blue.plist" textureFilename:@"grossini_blue.png"];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"grossini-aliases.plist" textureFilename:@"grossini-aliases.png"];
-     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"grossini_gray.plist" textureFilename:@"grossini_gray.png"];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"grossini_gray.plist" textureFilename:@"grossini_gray.png"];
     
     // Add Grossini Character
-    CCSprite* grossini = [CCSprite spriteWithImageNamed:@"grossini_blue_01.png"];
+    CCSprite* grossini = [CCSprite spriteWithImageNamed:@"grossini_dance_05.png"];
     grossini.position  = ccp(240,160);
     [self addChild:grossini z:10];
     
@@ -59,10 +59,10 @@
     CCBAnimationManager* grossiniAnimation = [[CCBAnimationManager alloc] init];
     [grossiniAnimation setRootNode:grossini];
     
-    [grossiniAnimation addAnimationsWithFile:@"animations.plist" node:grossini];
+    [grossiniAnimation addAnimationsWithFile:@"animations-2.plist" node:grossini];
     
     //NSArray* animFrames = @[@"grossini_dance_03.png",@"grossini_blue_02.png",@"grossini_blue_03.png",@"grossini_blue_04.png"];
-    //[grossiniAnimation animationWithSpriteFrames:animFrames delay:0.15f name:@"dance" node:grossini loop:YES];
+    //[grossiniAnimation animationWithSpriteFrames:animFrames delay:0.15f name:@"dance_4" node:grossini loop:YES];
     
     // Dance Grossini
     [grossiniAnimation runAnimationsForSequenceNamed:@"dance_1"];

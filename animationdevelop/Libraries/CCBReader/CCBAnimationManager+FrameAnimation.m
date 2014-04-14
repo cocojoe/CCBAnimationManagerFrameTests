@@ -29,7 +29,7 @@
     // Return to first frame
     NSDictionary* frameDict = [NSDictionary dictionaryWithObjectsAndKeys:
                                [animFrames firstObject], @"value",
-                               [NSNumber numberWithFloat:(nextTime+delay)], @"time",
+                               [NSNumber numberWithFloat:(nextTime)], @"time",
                                nil];
     
     [keyFrames addObject:frameDict];
@@ -44,9 +44,9 @@
 	NSArray* animationNames = [animations allKeys];
     NSMutableArray* animFrames = [[NSMutableArray alloc] init];
     
-	CCSpriteFrameCache *frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
-    
 	for( NSString *name in animationNames ) {
+        
+        [animFrames removeAllObjects];
         
 		NSDictionary* animationDict = [animations objectForKey:name];
 		NSArray *frameNames = [animationDict objectForKey:@"frames"];
@@ -59,81 +59,60 @@
 		}
 
 		for( NSString *frameName in frameNames ) {
-			CCSpriteFrame *spriteFrame = [frameCache spriteFrameByName:frameName];
+			CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:frameName];
 			
-			if ( ! spriteFrame ) {
+			if ( !spriteFrame ) {
 				CCLOG(@"Animation '%@' refers to frame '%@' which is not currently in the CCSpriteFrameCache.  This frame will not be added to the animation - Skipping", name, frameName);
 				continue;
 			}
             
             [animFrames addObject:frameName];
 		}
-		
-		if ( [animFrames count] == 0 ) {
-			CCLOG(@"None of the frames for animation '%@' were found in the CCSpriteFrameCache. Animation is not being added to the Animation Cache.", name);
-			continue;
-		} else if ( [animFrames count] != [frameNames count] ) {
-			CCLOG(@"An animation in your dictionary refers to a frame which is not in the CCSpriteFrameCache.  Some or all of the frames for the animation '%@' may be missing.", name);
-		}
-		
+        
         [self animationWithSpriteFrames:animFrames delay:delay name:name node:node loop:YES];
-
 	}
 }
 
-/*
-- (void)parseVersion2:(NSDictionary*)animations
-{
+- (void)parseVersion2:(NSDictionary*)animations node:(CCNode*)node {
+    
 	NSArray* animationNames = [animations allKeys];
-	CCSpriteFrameCache *frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
+    NSMutableArray* animFrames = [[NSMutableArray alloc] init];
 	
-	for( NSString *name in animationNames )
-	{
+	for( NSString *name in animationNames ) {
+        
+        [animFrames removeAllObjects];
 		NSDictionary* animationDict = [animations objectForKey:name];
         
-		NSNumber *loops = [animationDict objectForKey:@"loops"];
-		BOOL restoreOriginalFrame = [[animationDict objectForKey:@"restoreOriginalFrame"] boolValue];
+		//int loops = [[animationDict objectForKey:@"loops"] intValue];
+		//BOOL restoreOriginalFrame = [[animationDict objectForKey:@"restoreOriginalFrame"] boolValue];
+        
 		NSArray *frameArray = [animationDict objectForKey:@"frames"];
 		
-		
 		if ( frameArray == nil ) {
-			CCLOG(@"cocos2d: CCAnimationCache: Animation '%@' found in dictionary without any frames - cannot add to animation cache.", name);
+			CCLOG(@"Animation '%@' found in dictionary without any frames - Skipping", name);
 			continue;
 		}
-        
-		// Array of AnimationFrames
-		NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[frameArray count]];
         
 		for( NSDictionary *entry in frameArray ) {
 			NSString *spriteFrameName = [entry objectForKey:@"spriteframe"];
-			CCSpriteFrame *spriteFrame = [frameCache spriteFrameByName:spriteFrameName];
+			CCSpriteFrame *spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:spriteFrameName];
 			
-			if( ! spriteFrame ) {
-				CCLOG(@"cocos2d: CCAnimationCache: Animation '%@' refers to frame '%@' which is not currently in the CCSpriteFrameCache. This frame will not be added to the animation.", name, spriteFrameName);
-				
+			if ( !spriteFrame ) {
+				CCLOG(@"Animation '%@' refers to frame '%@' which is not currently in the CCSpriteFrameCache.  This frame will not be added to the animation - Skipping", name, spriteFrameName);
 				continue;
 			}
             
-			float delayUnits = [[entry objectForKey:@"delayUnits"] floatValue];
-			NSDictionary *userInfo = [entry objectForKey:@"notification"];
-			
-			CCAnimationFrame *animFrame = [[CCAnimationFrame alloc] initWithSpriteFrame:spriteFrame delayUnits:delayUnits userInfo:userInfo];
-			
-			[array addObject:animFrame];
-			[animFrame release];
+            [animFrames addObject:spriteFrameName];
+            
+			//float delayUnits = [[entry objectForKey:@"delayUnits"] floatValue];
+			//NSDictionary *userInfo = [entry objectForKey:@"notification"];
 		}
 		
 		float delayPerUnit = [[animationDict objectForKey:@"delayPerUnit"] floatValue];
-		CCAnimation *animation = [[CCAnimation alloc] initWithAnimationFrames:array delayPerUnit:delayPerUnit loops:(loops?[loops intValue]:1)];
-		[array release];
-		
-		[animation setRestoreOriginalFrame:restoreOriginalFrame];
-        
-		[[CCAnimationCache sharedAnimationCache] addAnimation:animation name:name];
-		[animation release];
+
+        [self animationWithSpriteFrames:animFrames delay:delayPerUnit name:name node:node loop:YES];
 	}
 }
-*/
 
 - (void)addAnimationsWithDictionary:(NSDictionary *)dictionary node:(CCNode*)node {
 	NSDictionary *animations = [dictionary objectForKey:@"animations"];
@@ -151,16 +130,17 @@
 	
 	NSArray *spritesheets = [properties objectForKey:@"spritesheets"];
     
+    // Ensure Sheets Loaded
 	for( NSString *name in spritesheets ) {
 		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:name];
     }
     
 	switch (version) {
 		case 1:
-			[self parseVersion1:animations node:(CCNode*)node];
+			[self parseVersion1:animations node:node];
 			break;
 		case 2:
-			//[self parseVersion2:animations node:(CCNode*)node];
+			[self parseVersion2:animations node:node];
 			break;
 		default:
 			NSAssert(NO, @"Invalid animation format.");
