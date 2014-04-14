@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B051B2118FC03910091CB8C /* CCBAnimationManager+FrameAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B051B2018FC03910091CB8C /* CCBAnimationManager+FrameAnimation.m */; };
+		5B051B3118FC1F9A0091CB8C /* animations-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2218FC1F9A0091CB8C /* animations-2.plist */; };
+		5B051B3218FC1F9A0091CB8C /* animations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2318FC1F9A0091CB8C /* animations.plist */; };
+		5B051B3318FC1F9A0091CB8C /* dragon_animation-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2418FC1F9A0091CB8C /* dragon_animation-hd.png */; };
+		5B051B3418FC1F9A0091CB8C /* dragon_animation.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2518FC1F9A0091CB8C /* dragon_animation.png */; };
+		5B051B3518FC1F9A0091CB8C /* ghosts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2618FC1F9A0091CB8C /* ghosts.plist */; };
+		5B051B3618FC1F9A0091CB8C /* ghosts.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2718FC1F9A0091CB8C /* ghosts.png */; };
+		5B051B3718FC1F9A0091CB8C /* grossini_family.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2818FC1F9A0091CB8C /* grossini_family.plist */; };
+		5B051B3818FC1F9A0091CB8C /* grossini_family.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2918FC1F9A0091CB8C /* grossini_family.png */; };
+		5B051B3918FC1F9A0091CB8C /* grossini_gray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2A18FC1F9A0091CB8C /* grossini_gray.plist */; };
+		5B051B3A18FC1F9A0091CB8C /* grossini_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2B18FC1F9A0091CB8C /* grossini_gray.png */; };
+		5B051B3B18FC1F9A0091CB8C /* grossini-aliases.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2C18FC1F9A0091CB8C /* grossini-aliases.plist */; };
+		5B051B3C18FC1F9A0091CB8C /* grossini-aliases.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2D18FC1F9A0091CB8C /* grossini-aliases.png */; };
+		5B051B3D18FC1F9A0091CB8C /* grossini.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2E18FC1F9A0091CB8C /* grossini.plist */; };
+		5B051B3E18FC1F9A0091CB8C /* grossini.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B2F18FC1F9A0091CB8C /* grossini.pvr.gz */; };
+		5B051B3F18FC1F9A0091CB8C /* grossini.zss in Resources */ = {isa = PBXBuildFile; fileRef = 5B051B3018FC1F9A0091CB8C /* grossini.zss */; };
 		5B8BD5C718CE7415002FC624 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8BD5C618CE7415002FC624 /* QuartzCore.framework */; };
 		5B8BD5C918CE7415002FC624 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8BD5C818CE7415002FC624 /* OpenGLES.framework */; };
 		5B8BD5CB18CE7415002FC624 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8BD5CA18CE7415002FC624 /* OpenAL.framework */; };
@@ -226,6 +242,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B051B1F18FC03910091CB8C /* CCBAnimationManager+FrameAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CCBAnimationManager+FrameAnimation.h"; path = "Libraries/CCBReader/CCBAnimationManager+FrameAnimation.h"; sourceTree = "<group>"; };
+		5B051B2018FC03910091CB8C /* CCBAnimationManager+FrameAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CCBAnimationManager+FrameAnimation.m"; path = "Libraries/CCBReader/CCBAnimationManager+FrameAnimation.m"; sourceTree = "<group>"; };
+		5B051B2218FC1F9A0091CB8C /* animations-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "animations-2.plist"; path = "Resources/animations-2.plist"; sourceTree = "<group>"; };
+		5B051B2318FC1F9A0091CB8C /* animations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = animations.plist; path = Resources/animations.plist; sourceTree = "<group>"; };
+		5B051B2418FC1F9A0091CB8C /* dragon_animation-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dragon_animation-hd.png"; path = "Resources/dragon_animation-hd.png"; sourceTree = "<group>"; };
+		5B051B2518FC1F9A0091CB8C /* dragon_animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragon_animation.png; path = Resources/dragon_animation.png; sourceTree = "<group>"; };
+		5B051B2618FC1F9A0091CB8C /* ghosts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ghosts.plist; path = Resources/ghosts.plist; sourceTree = "<group>"; };
+		5B051B2718FC1F9A0091CB8C /* ghosts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ghosts.png; path = Resources/ghosts.png; sourceTree = "<group>"; };
+		5B051B2818FC1F9A0091CB8C /* grossini_family.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = grossini_family.plist; path = Resources/grossini_family.plist; sourceTree = "<group>"; };
+		5B051B2918FC1F9A0091CB8C /* grossini_family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grossini_family.png; path = Resources/grossini_family.png; sourceTree = "<group>"; };
+		5B051B2A18FC1F9A0091CB8C /* grossini_gray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = grossini_gray.plist; path = Resources/grossini_gray.plist; sourceTree = "<group>"; };
+		5B051B2B18FC1F9A0091CB8C /* grossini_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grossini_gray.png; path = Resources/grossini_gray.png; sourceTree = "<group>"; };
+		5B051B2C18FC1F9A0091CB8C /* grossini-aliases.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "grossini-aliases.plist"; path = "Resources/grossini-aliases.plist"; sourceTree = "<group>"; };
+		5B051B2D18FC1F9A0091CB8C /* grossini-aliases.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "grossini-aliases.png"; path = "Resources/grossini-aliases.png"; sourceTree = "<group>"; };
+		5B051B2E18FC1F9A0091CB8C /* grossini.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = grossini.plist; path = Resources/grossini.plist; sourceTree = "<group>"; };
+		5B051B2F18FC1F9A0091CB8C /* grossini.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = grossini.pvr.gz; path = Resources/grossini.pvr.gz; sourceTree = "<group>"; };
+		5B051B3018FC1F9A0091CB8C /* grossini.zss */ = {isa = PBXFileReference; lastKnownFileType = file; name = grossini.zss; path = Resources/grossini.zss; sourceTree = "<group>"; };
 		5B8BD5C318CE7415002FC624 /* animationdevelop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = animationdevelop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B8BD5C618CE7415002FC624 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5B8BD5C818CE7415002FC624 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -725,6 +758,21 @@
 		5B8BD5DF18CE7415002FC624 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5B051B2218FC1F9A0091CB8C /* animations-2.plist */,
+				5B051B2318FC1F9A0091CB8C /* animations.plist */,
+				5B051B2418FC1F9A0091CB8C /* dragon_animation-hd.png */,
+				5B051B2518FC1F9A0091CB8C /* dragon_animation.png */,
+				5B051B2618FC1F9A0091CB8C /* ghosts.plist */,
+				5B051B2718FC1F9A0091CB8C /* ghosts.png */,
+				5B051B2818FC1F9A0091CB8C /* grossini_family.plist */,
+				5B051B2918FC1F9A0091CB8C /* grossini_family.png */,
+				5B051B2A18FC1F9A0091CB8C /* grossini_gray.plist */,
+				5B051B2B18FC1F9A0091CB8C /* grossini_gray.png */,
+				5B051B2C18FC1F9A0091CB8C /* grossini-aliases.plist */,
+				5B051B2D18FC1F9A0091CB8C /* grossini-aliases.png */,
+				5B051B2E18FC1F9A0091CB8C /* grossini.plist */,
+				5B051B2F18FC1F9A0091CB8C /* grossini.pvr.gz */,
+				5B051B3018FC1F9A0091CB8C /* grossini.zss */,
 				5B8BD88118CE78FD002FC624 /* grossini_blue.plist */,
 				5B8BD88218CE78FD002FC624 /* grossini_blue.png */,
 				5B8BD5E018CE7415002FC624 /* Default.png */,
@@ -1376,6 +1424,8 @@
 		5B8BD7E418CE7417002FC624 /* CCBReader */ = {
 			isa = PBXGroup;
 			children = (
+				5B051B1F18FC03910091CB8C /* CCBAnimationManager+FrameAnimation.h */,
+				5B051B2018FC03910091CB8C /* CCBAnimationManager+FrameAnimation.m */,
 				5B8BD7E518CE7417002FC624 /* CCBAnimationManager.h */,
 				5B8BD7E618CE7417002FC624 /* CCBAnimationManager.m */,
 				5B8BD7E818CE7417002FC624 /* CCBKeyframe.h */,
@@ -1619,30 +1669,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B051B3A18FC1F9A0091CB8C /* grossini_gray.png in Resources */,
 				5B8BD5E318CE7415002FC624 /* Default@2x.png in Resources */,
 				5B8BD5F618CE7415002FC624 /* Icon-120.png in Resources */,
+				5B051B3B18FC1F9A0091CB8C /* grossini-aliases.plist in Resources */,
+				5B051B3318FC1F9A0091CB8C /* dragon_animation-hd.png in Resources */,
 				5B8BD88318CE78FD002FC624 /* grossini_blue.plist in Resources */,
 				5B8BD7FA18CE7417002FC624 /* LICENSE_CCBReader.txt in Resources */,
 				5B8BD5EC18CE7415002FC624 /* Icon@2x.png in Resources */,
 				5B8BD5FE18CE7415002FC624 /* Icon-Small@2x.png in Resources */,
+				5B051B3F18FC1F9A0091CB8C /* grossini.zss in Resources */,
 				5B8BD5F018CE7415002FC624 /* Icon-72@2x.png in Resources */,
+				5B051B3E18FC1F9A0091CB8C /* grossini.pvr.gz in Resources */,
 				5B8BD5E118CE7415002FC624 /* Default.png in Resources */,
+				5B051B3418FC1F9A0091CB8C /* dragon_animation.png in Resources */,
 				5B8BD5EA18CE7415002FC624 /* Icon.png in Resources */,
 				5B8BD88418CE78FD002FC624 /* grossini_blue.png in Resources */,
+				5B051B3918FC1F9A0091CB8C /* grossini_gray.plist in Resources */,
 				5B8BD5F818CE7415002FC624 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
+				5B051B3D18FC1F9A0091CB8C /* grossini.plist in Resources */,
+				5B051B3718FC1F9A0091CB8C /* grossini_family.plist in Resources */,
 				5B8BD5E718CE7415002FC624 /* Default-Landscape~ipad.png in Resources */,
 				5B8BD5FC18CE7415002FC624 /* Icon-Small.png in Resources */,
 				5B8BD5FA18CE7415002FC624 /* Icon-Small-50.png in Resources */,
 				5B8BD7E318CE7417002FC624 /* LICENSE_Kazmath.txt in Resources */,
 				5B8BD5EE18CE7415002FC624 /* Icon-72.png in Resources */,
+				5B051B3518FC1F9A0091CB8C /* ghosts.plist in Resources */,
 				5B8BD73C18CE7416002FC624 /* LICENSE_cocos2d.txt in Resources */,
 				5B8BD5E518CE7415002FC624 /* Default-568h@2x.png in Resources */,
+				5B051B3618FC1F9A0091CB8C /* ghosts.png in Resources */,
+				5B051B3818FC1F9A0091CB8C /* grossini_family.png in Resources */,
 				5B8BD60518CE7415002FC624 /* iTunesArtwork in Resources */,
+				5B051B3118FC1F9A0091CB8C /* animations-2.plist in Resources */,
 				5B8BD60018CE7415002FC624 /* Icon-Spotlight-iOS7.png in Resources */,
 				5B8BD5F418CE7415002FC624 /* Icon-76@2x.png in Resources */,
 				5B8BD86818CE7417002FC624 /* LICENSE_Chipmunk.txt in Resources */,
+				5B051B3C18FC1F9A0091CB8C /* grossini-aliases.png in Resources */,
 				5B8BD60218CE7415002FC624 /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				5B8BD5F218CE7415002FC624 /* Icon-76.png in Resources */,
+				5B051B3218FC1F9A0091CB8C /* animations.plist in Resources */,
 				5B8BD7C818CE7417002FC624 /* ChangeLog in Resources */,
 				5B8BD60718CE7415002FC624 /* iTunesArtwork@2x in Resources */,
 			);
@@ -1777,6 +1842,7 @@
 				5B8BD7F318CE7417002FC624 /* CCBSequenceProperty.m in Sources */,
 				5B8BD7E718CE7417002FC624 /* CCBAnimationManager.m in Sources */,
 				5B8BD7DB18CE7417002FC624 /* utility.c in Sources */,
+				5B051B2118FC03910091CB8C /* CCBAnimationManager+FrameAnimation.m in Sources */,
 				5B8BD73A18CE7416002FC624 /* ZipUtils.m in Sources */,
 				5B8BD74B18CE7417002FC624 /* OALUtilityActions.m in Sources */,
 				5B8BD6F618CE7416002FC624 /* CCES2Renderer.m in Sources */,

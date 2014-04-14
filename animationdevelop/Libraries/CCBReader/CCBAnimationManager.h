@@ -33,7 +33,7 @@
 
 @protocol CCBAnimationManagerDelegate <NSObject>
 
-- (void)completedAnimationSequenceNamed:(NSString*)name;
+- (void) completedAnimationSequenceNamed:(NSString*)name;
 
 @end
 
@@ -53,6 +53,8 @@
     CCScheduler* _scheduler;
     NSMutableArray* _currentActions;
     
+    BOOL _loop;
+    
 }
 
 // Sequence Array.
@@ -60,6 +62,9 @@
 
 // Auto play sequence id.
 @property (nonatomic,assign) int autoPlaySequenceId;
+
+// Animation manager updates on a fixed timestep.
+@property (nonatomic,assign) bool fixedTimestep;
 
 // Base node.
 @property (nonatomic,unsafe_unretained) CCNode* rootNode;
@@ -99,7 +104,7 @@
 - (void) runAnimationsForSequenceId:(int)seqId tweenDuration:(float) tweenDuration;
 
 // Animation call back.
-- (void) setCompletedAnimationCallbackBlock:(void(^)(id sender))b;
+-(void) setCompletedAnimationCallbackBlock:(void(^)(id sender))b;
 
 #pragma mark Time Controls
 - (void)timeSeekForSequenceNamed:(NSString*)name time:(float)time;
@@ -107,8 +112,5 @@
 
 #pragma mark Simple Sequence Builder
 - (void)addKeyFramesForSequenceNamed:(NSString*)name propertyType:(CCBSequencePropertyType)propertyType frameArray:(NSArray*)frameArray node:(CCNode *)node loop:(BOOL)loop;
-
-#pragma mark Cocos2D Animation Support
-- (void)animationWithSpriteFrames:animFrames delay:(float)delay name:(NSString*)name node:(CCNode*)node loop:(BOOL)loop;
 
 @end
